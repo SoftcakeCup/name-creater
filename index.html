@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korean name creater</title>
+</head>
+<body>
+    <h1 style="font-size: 60px;">이름 생성기</h1>
+
+    <div id="name-creater-div">
+        <div id="name-creater-div-2">
+            <h1 id="name"></h1>
+            <input type="text" id="first-name-input" placeholder="" maxlength="1" style="
+            width: 100px;
+            height: 100px; 
+            font-size: 100px;">
+            <button id="create-name-btn" style="
+            position: relative;
+            top: -22px;
+            width: 100px;
+            height: 105px; 
+            font-size: 40px;">생성</button>
+        </div>
+    </div>
+
+    <details id="name-creater-de">
+        <summary id="name-creater-su" style="font-size: 25px;">이름뜻 보기</summary>
+
+        <span id="name-creater-span" style="font-size: 25px;">알아서 잘 뜻을 부여하는것이 정신건강에 좋습니다</span>
+    </details>
+
+    <script>
+        const nameCreaterDiv = document.querySelector("name-creater-div");
+        const nameCreateDiv2 = document.querySelector("#name-creater-div-2");
+        const nameH1 = document.querySelector("#name-h1");
+        const nameCreateNumberBtn = document.querySelector("#create-name-btn");
+        const firstNameInput = document.querySelector("#first-name-input");
+
+        const name = document.querySelector("#name");
+
+        const seeMoreDet = document.querySelector("#name-creater-de");
+        const seeMoreSum = document.querySelector("#name-creater-su");
+        const seeMoreSpan = document.querySelector("#name-creater-span");
+
+        const scWorld = ["가", "나", "다", "라", "마", "바", "사", "아", "자", "카", "타", "파", "하", "의", "부", "꾁", 
+        "우", "왹", "슝", "뀨", "뻑", "커", "카", "오", "뿡", "김", "윤", "이", "으", "뻐", "쉬", "봉", "웽", "왱", "쉥", "쇙", "엣", "보", "봇", "왓", "노", "도", "똥", "악", "해", "병", "열", "웃", "나", "퀄", "찐", "겹", "단", "땀", "딱", "받", "닻", "쑦", "쏰", "곯", "웖", "쿰", "볂", "변", "브", "엑", "스", "컴", "뮤", "티", "워", "읢", "건", "빵", "늬", "네", "내", "넮", "낾", "훎", "홁", "름", "릃", "읋", "읅", "칡", "힁", "췍", "제", "리", "캔", "손", "민", "밁", "믹", "밇", "흥", "흙", "응", "거", "라", "락", "랅", "쁢", "몬","뫃","욂", "염", "엶", "늉", "뉾", "뉼"];
+        
+        const thWorld = ["가", "나", "다", "라", "마", "바", "사", "아", "자", "카", "타", "파", "하", "의", "부", "꾁", 
+        "우", "왹", "슝", "뀨", "뻑", "커", "카", "오", "뿡", "김", "윤", "이", "으", "뻐", "쉬", "봉", "웽", "왱", "쉥", "쇙", "엣", "보", "봇", "왓", "노", "악", "해", "씹", "맛", "월", "도", "뻒","퀄", "찐", "겹", "단", "땀", "딱", "받", "닻", "쑦", "쏰", "곯", "웖", "쿰", "볂", "변", "브", "엑", "스", "컴", "뮤", "티", "워", "읢", "건", "빵", "늬", "네", "내", "넮", "낾", "훎", "홁", "름", "릃", "읋", "읅", "칡", "힁", "췍", "제", "리", "캔", "손", "민", "밁", "믹", "밇", "흥", "흙", "응", "거", "라", "락", "랅", "쁢", "몬","뫃","욂", "염", "엶", "늉", "뉾", "뉼"];
+        
+
+        function createName()
+        {
+            let name = firstNameInput.value + scWorld[Math.floor(Math.random()*scWorld.length)] + thWorld[Math.floor(Math.random()*thWorld.length)];
+
+            document.getElementById("name").innerText = name   
+        }
+        nameCreateNumberBtn.addEventListener("click", createName);
+    </script>
+</body>
+</html>
